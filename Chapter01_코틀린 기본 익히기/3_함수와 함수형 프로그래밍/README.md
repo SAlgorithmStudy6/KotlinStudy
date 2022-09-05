@@ -1,0 +1,22 @@
+# [Chapter01-1] 코틀린 시작하기
+- 발표일 : 2022/09/07
+- 발표자 : 황지원
+<br>
+
+## 1. 코틀린의 탄생 배경
+### 1-1. 코틀린을 소개합니다.
+코틀린은 어떤 용어로 만든 언어일까요? 블라블라 내용내용.
+코틀린은 다음과 같은 특징을 가집니다.
+- Kotlin : jdjdjdj
+- 편하다.
+- 등등
+
+## 2. 실습 환경 구축하기
+=> Result : 모든 단위테스트 통과 
+<img src="./img/ProductServiceTest.jpg" width="80%" height="500px" title="User Test Result" alt="User Test Result"></img><br />
+
+### 3. 코틀린 프로젝트 시작하기
+=> Result : 모든 단위테스트 통과 
+<img src="./img/OrderServiceTest.jpg" width="80%" height="500px" title="User Test Result" alt="User Test Result"></img><br />
+
+
