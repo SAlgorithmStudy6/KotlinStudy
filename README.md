@@ -21,6 +21,19 @@
 - 마크다운에 필요한 에셋들이 있다면, 챕터별 디렉토리 안에 asset 디렉토리를 따로 생성해 업로드 부탁드립니다.
 
 ### 🧑‍ 스터디원
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">스터디원</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>최강 최창영</td>
+            <td>그외</td>
+        </tr>
+    </tbody>
+</table>
 
 
 
