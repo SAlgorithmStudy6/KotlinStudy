@@ -5,8 +5,8 @@
     
     ```kotlin
     if (조건식) { // 조건식이 true인 경우만 수행
-    		수행할 문장 
-    		...
+    	수행할 문장 
+    	...
     }
     ```
     
@@ -14,18 +14,18 @@
     
     ```kotlin
     fun main(){
-    		val a = 12
-    		val b = 7
+    	val a = 12
+    	val b = 7
     
-    		val max = if(a > b){
-    				println("a 선택")
-    				a // 마지막 식인 a가 반환되어 max에 할당
-    		}else{
-    				println("b 선택")
-    				b // 마지막 식인 b가 반환되어 max에 할당
-    		}
+    	val max = if(a > b){
+    		println("a 선택")
+    		a // 마지막 식인 a가 반환되어 max에 할당
+    	}else{
+    		println("b 선택")
+    		b // 마지막 식인 b가 반환되어 max에 할당
+    	}
     
-    		println(max) // 12
+    	println(max) // 12
     }
     		
     ```
@@ -43,16 +43,16 @@
     
     ```kotlin
     when(x){
-    		1 -> print("x == 1")
-    		2 -> print("x == 2")
-    		else -> { // 중괄호 가능
-    				print("x는 1,2가 아닙니다")
-    		}
+    	1 -> print("x == 1")
+    	2 -> print("x == 2")
+    	else -> { // 중괄호 가능
+    		print("x는 1,2가 아닙니다")
+    	}
     }
     
     when(x){
-    		0, 1 -> print("x == 0 or x == 1")
-    		else -> print("기타")
+    	0, 1 -> print("x == 0 or x == 1")
+    	else -> print("기타")
     }
     ```
     
@@ -60,8 +60,8 @@
     
     ```kotlin
     when(x) {
-    		parseInt(s) -> print("일치함")
-    		else -> print("기타")
+    	parseInt(s) -> print("일치함")
+    	else -> print("기타")
     }
     ```
     
@@ -83,9 +83,9 @@
     ```kotlin
     val str = "안녕하세요"
     val result = when(str){
-    							is String -> "문자열"
-    							else -> false
-    							}
+    	is String -> "문자열"
+    	else -> false
+    }
     ```
     
     - 변수 str의 자료형이 String인 경우 “문자열”을 result에 할당함
