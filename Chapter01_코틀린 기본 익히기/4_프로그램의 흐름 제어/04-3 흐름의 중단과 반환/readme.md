@@ -299,7 +299,6 @@
         ```
         
     - 스택의 추적
-        - dd
         
         ```kotlin
         fun main( ){
