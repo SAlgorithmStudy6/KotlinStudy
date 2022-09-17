@@ -250,6 +250,22 @@ annotation class Anno(val a: String)
  * 기타 애노테이션
  * 클래스
  * 위 목록의 배열
+ 
+ ##### 애노테이션이 다른 애노테이션을 가질 경우 => @ 기호 생략
+ ![image](https://user-images.githubusercontent.com/53904156/190867457-4bdae15c-8609-424d-b1a3-c6761cda5a4e.png)
+
+ 
+ ##### 애노테이션 인자로 특정 클래스가 필요한 경우 => KClass 사용하여 자바 클래스로 변환 필요
+ ![image](https://user-images.githubusercontent.com/53904156/190867474-2f7588e5-31fc-4895-bdff-6d7afc858d5d.png)
 
 
+#### 표준 애노테이션
 
+ 1. JvmName("변경 후 이름") => 함수명 변경
+![image](https://user-images.githubusercontent.com/53904156/190867536-8b83ccf8-6272-4279-a5ed-80215e458c8e.png)
+
+ 2. JvmStatic => 자바 정적 메서드 생성 가능
+ 3. Throw => 코틀린에서 자바 throw 구문 사용 가능
+ ![image](https://user-images.githubusercontent.com/53904156/190867584-ff26ab20-3bd9-41c6-aadd-842326e3a40d.png)
+
+ 4. @JvmOverloads => 적용한 함수의 모든 경우의 인자 오버로딩
