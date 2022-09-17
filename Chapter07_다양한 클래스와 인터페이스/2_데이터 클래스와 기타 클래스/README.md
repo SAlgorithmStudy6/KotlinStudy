@@ -195,4 +195,61 @@ enum class ArrowKey {
 #### 인터페이스 사용
 ![image](https://user-images.githubusercontent.com/53904156/190862697-e2ef2039-9ed5-48aa-9ba2-a0147f43158a.png)
 
-< hr / >
+<hr />
+
+## 애노테이션(Annotation) 클래스
+ @ 기호와 함께 사용되며 컴파일러나 런타임 시 사전 처리를 위해 사용됨.
+ 
+#### 애노테이션 선언
+```kotlin
+//선언 형식
+annotation class 애노테이션 이름
+
+annotation class A // 선언
+
+...
+
+@A class BClass{} //사용
+```
+
+#### 애노테이션 속성
+
+![image](https://user-images.githubusercontent.com/53904156/190862981-f7a1c527-18ea-4538-a1e5-ee173a8f060a.png)
+
+ * @Retention을 Source 사용시 컴파일 시 제거. Binary 사용시 클래스 포함되지만 리플렉션에 의해 나타나지 않음. Runtime 사용시 클래스 파일에 저장 및 리플렉션에 의해 나타남
+ * 리플렉션 : 프로그램 실행 시 특정 구조 분석해내는 기법. 
+
+![image](https://user-images.githubusercontent.com/53904156/190863253-881e00e9-e0a8-405e-810b-40a0a05d4498.png)
+
+
+#### 애노테이션 위치
+```kotlin
+@Anno class MClass {
+ @Anno fun method(@Anno property: Any): Any {
+  return (@Anno 1)
+ }
+}
+```
+ * 클래스 앞
+ * 메서드 앞
+ * 매개변수 앞
+ * 반환 값 앞 => 소괄호로 감싸야 함
+ * 생성자 앞 => constructor 생략 불가. ex) class A @Anno constructor (p: Any){}
+
+#### 애노테이션의 매개변수 및 생성자
+```kotlin
+annotation class Anno(val a: String)
+
+@Anno("ex") class A {}
+```
+
+##### 매개변수 사용가능한 자료형
+ * 자바의 기본형과 연동하는 자료형
+ * 열거형
+ * 문자열
+ * 기타 애노테이션
+ * 클래스
+ * 위 목록의 배열
+
+
+
