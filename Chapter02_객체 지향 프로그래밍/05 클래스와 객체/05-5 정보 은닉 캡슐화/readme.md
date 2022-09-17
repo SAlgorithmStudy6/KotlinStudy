@@ -24,3 +24,5 @@
     - protected : #
     - package : ~ (코틀린의 internal의 표기법이 아직 지정되지 않았음)
  
+      <img width="409" alt="화면 캡처 2022-09-17 171452" src="https://user-images.githubusercontent.com/43957736/190847359-87ca07a3-9b24-49ad-b9bb-88cbacf6ded7.png">
+    
