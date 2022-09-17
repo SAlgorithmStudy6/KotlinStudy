@@ -1,1 +1,50 @@
 # 05-1클래스와 객체의 정의
+
+- 객체 지향 프로그래밍
+  - 정의 : 프로그램의 구조를 개체 간 상호작용으로서 표현하는 프로그래밍 방식
+  - 코틀린은 **객체 지향 프로그래밍**과 **함수형 프로그래밍**기법을 지원
+  - 개념
+    - 추상화 : 특정 클래스를 만들 때 기본 형식을 규정하는 방법
+    - 인스턴스 : 클래스로부터 생성한 객체
+    - 상속 : 부모클래스의 내용을 자식 클래스가 그대로 물려 받음 (클래스 다이어그램에서 상속은 화살표로 표현)
+    - 다형성 : 하나의 이름으로 다양한 처리를 제공
+    - 캡슐화 : 내용을 숨기고 필요한 부분만 사용
+    - 메시지 전송 : 객체 간에 주고 받는 메시지
+    - 연관 클래스 간의 관계
+    
+  - 용어 정리
+  
+    | **코틀린** | **타 언어** |
+    | ---- | ---- |
+    | 클래스(Class) | 분류, 범주 |
+    | 프로퍼티(Property) | 속성, 변수, 필드, 데이터 |
+    | 메소드(Method) | 함수, 동작, 행동 |
+    | 객체(Object) | 인스턴스 |
+  
+  - 클래스 추상화 : 프로그램 동작에 있어서 필요한 만큼 속성과 동작을 정의하는 과정
+  - 클래스 선언
+    ```kotlin
+    class Bird { }  //빈 클래스
+    class Bird  //중괄호 생략 가능
+    ```
+    
+    ```kotlin
+    class Bird{
+      //프로퍼티(속성)
+      var name: String = "mybird" //프로퍼티 명과 : 이 붙어있음(일종의 관습, 뒤에 설명)
+      var wing: Int = 2
+      var beak: String = "short"
+      var color: String = "blue"
+      
+      fun fly() = println("Fly wing: $wing")
+      fun sing(vol: Int) = println("Sing vol: $vol")
+    }
+    
+    fun main() {
+      val coco = Bird() //클래스 생성자를 통한 객체의 생성
+      coco.color = "blue" //객체의 프로퍼티에 값 할당
+      
+      println("coco.color: ${coco.color}"}  // coco.color: blue
+      coco.fly()
+      coco.sing(3)
+    ```
