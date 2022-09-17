@@ -150,3 +150,49 @@ val unicorn = object: Animal() {
 
 
 <hr / >
+
+## 열거형 클래스
+ 여러 상수를 선언하고 사용할 수 있는 특수한 클래스
+ * 열거형 이름 및 번호 등을 얻어 올 수 있다. enum.name, enum.ordinal, enum.toString() 등..
+
+
+#### 선언부
+```kotlin
+enum class 클래스 이름 [(생성자)] {
+ 상수1[(값)], 상수2[값]
+ [; 메소드 or 프로퍼티]
+}
+```
+ 
+```kotlin
+enum class ArrowKey {
+ UP, DOWN, LEFT, RIGHT
+}
+```
+
+#### when 사용
+```kotlin
+ when(ArrowKey) {
+  UP -> println("up")
+  down -> println("down")
+  left -> println("left")
+  right -> println("right")
+ }
+```
+
+#### 값 여러개, 메서드 포함
+![image](https://user-images.githubusercontent.com/53904156/190862476-db47b03e-3aa7-422c-a71d-945543c36d58.png)
+
+
+#### 열거형 기본 제공 메소드
+![image](https://user-images.githubusercontent.com/53904156/190862647-27e6a740-2d62-4a0d-b4bc-92543f259722.png)
+ * name : 이름
+ * ordinal : 순서번호
+ * toString : 문자열 변환
+ * 그냥 => 기본값(문자열)
+ * values : 모든 값 반환
+
+#### 인터페이스 사용
+![image](https://user-images.githubusercontent.com/53904156/190862697-e2ef2039-9ed5-48aa-9ba2-a0147f43158a.png)
+
+< hr / >
