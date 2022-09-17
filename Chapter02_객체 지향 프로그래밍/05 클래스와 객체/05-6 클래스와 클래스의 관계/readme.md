@@ -9,6 +9,7 @@
   - **2개의 서로 분리된 클래스가 연결을 가지는 것**
   - 단방향 혹은 양방향으로 연결될 수 있음 
   - 두 요소는 서로 다른 생명주기를 갖고 있음
+  
     ```kotlin
     class patient(val name: String){
       fun doctorList(d: Doctor){
