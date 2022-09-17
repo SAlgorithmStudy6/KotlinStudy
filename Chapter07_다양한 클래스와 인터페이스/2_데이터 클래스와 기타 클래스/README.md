@@ -132,3 +132,21 @@ val unicorn = object: Animal() {
 
 <hr / >
 
+## sealed 클래스
+ * sealed class 키워드로 선언
+ * 추상 클래스와 같음
+ * private 생성자 외 허용 안됨.
+ * 블록 내 클래스는 다른 파일에서 상속 불가 open 키워드 사용하여 상속 가능
+
+ => when 문 사용하여 객체 자료형 따라 특정 기능 실행 가능 중첩 클래스 or 이너 클래스는 경우의 수를 판단할 수 없지만 sealed 클래스는 경우의 수를 직접 지정 가능.
+ 
+ ![image](https://user-images.githubusercontent.com/53904156/190861399-2252e363-6949-4944-abb8-e0da0f7c3fba.png)
+
+
+![image](https://user-images.githubusercontent.com/53904156/190861435-6f1bdf5f-30bb-4eea-9a4a-954f6dc53057.png)
+
+
+![image](https://user-images.githubusercontent.com/53904156/190861490-f0285131-092f-4d61-83b9-7643ee21e8e0.png)
+
+
+<hr / >
