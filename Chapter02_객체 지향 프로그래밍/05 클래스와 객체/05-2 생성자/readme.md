@@ -65,7 +65,7 @@
    
   - 초기화 블록 사용 : 코드가 간결해짐, 반드시 클래스 선언부에 넣어주어야 함
   - 생성자 매개변수에 기본값을 사용하면 객체를 생성할 때 기본값이 있는 인자는 생략 가능
-   ```kotlin
+    ```kotlin
    class Bird constructor(var name: String = "PAEHA", var wing: Int = 2, var beak: String, var color: String) {
         init {
         println("초기화 블록입니다")
@@ -81,4 +81,4 @@
       
         println("coco.color: ${coco.color}"}  // coco.color: yellow
       }
-   ```
+     ```
