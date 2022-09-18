@@ -281,7 +281,7 @@ fun <T> myMax(a: T, b: T): T where T : Number, T : Comparable<T> {
 | 반공변성(Contravariance) | ‘T’가 T의 하위 자료형이면, C<’T’>는 C<T>의 하위 자료형이다. 소비자 입장의 in 성질 |
 | 무변성(Invariance) | C<T>와 C<’T’>는 아무 관계가 없다. 생산자 + 소비자 |
 
-![Untitled](08-1%20%E1%84%8C%E1%85%A6%E1%84%82%E1%85%A6%E1%84%85%E1%85%B5%E1%86%A8%20%E1%84%83%E1%85%A1%E1%84%85%E1%85%AE%E1%84%80%E1%85%B5%20b3889203f2144a299cf47823a13b740c/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/48742378/190898640-d97f8b4a-5f6c-4045-8a5b-8a2c458118c3.png)
 
 - **무변성 :** 제네릭 클래스를 인스턴스화할 때 서로 다른 자료형을 인자로 사용하려면 자료형 사이의 상,하위 관계를 잘 따져야 한다. (in,out 키워드 사용)
 
