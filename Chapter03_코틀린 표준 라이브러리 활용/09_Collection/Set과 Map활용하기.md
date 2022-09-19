@@ -169,8 +169,7 @@ mutableSetOf()함수로 요소의 추가 삭제가 가능 mutableSetOf()는 Muta
 ```
 
 
-
-
+![](https://velog.velcdn.com/images/lifeisbeautiful/post/d4071240-19c4-4a3b-bfde-4032001b4003/image.png)
 
 
 
