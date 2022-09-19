@@ -38,6 +38,7 @@ setOf에서는 자료형을 혼합하거나 특정 자료형을 지정할 수 �
 <br>
 
 **가변형 mutableSetOf()**
+
 mutableSetOf()함수로 요소의 추가 삭제가 가능 mutableSetOf()는 MutableSet인터페이스 자료형을 반환하는데, 내부적으로 자바의 LinkedHashSet을 만들어냅니다.
 
 ``` kotlin
@@ -117,12 +118,12 @@ mutableSetOf()함수로 요소의 추가 삭제가 가능 mutableSetOf()는 Muta
 
 ```
 
-
+<br>
 
 ---
 ## Map 활용
 
-**불변형 mapOf()**
+### 불변형 mapOf()
 
 - mapOf()는 불변형 Map컬렉션을 만들 수 있다.
 
@@ -138,8 +139,8 @@ mutableSetOf()함수로 요소의 추가 삭제가 가능 mutableSetOf()는 Muta
 
 **Key와 Value 따로 출력하기**
 
-방법1. 
-
+방법1. $사인 사용하기.
+ 
 ``` kotlin
 
     for((key, value) in langMap) {
@@ -154,7 +155,7 @@ mutableSetOf()함수로 요소의 추가 삭제가 가능 mutableSetOf()는 Muta
 
 <br>
 
-방법2.
+방법2. it사용
 
 ``` kotlin
 
@@ -169,15 +170,80 @@ mutableSetOf()함수로 요소의 추가 삭제가 가능 mutableSetOf()는 Muta
 ```
 
 
+**Map에서 사용하는 멤버 프로퍼티와 메소드**
+
 ![](https://velog.velcdn.com/images/lifeisbeautiful/post/d4071240-19c4-4a3b-bfde-4032001b4003/image.png)
 
+<br>
 
 
+### 가변형 mutableMapOf()
+
+**mutableMapOf()**는 추가, 삭제가 가능한 가변형 Map을 정의합니다. 이 함수는 MutableMap(K, V) 인터페이스 자료형을 반환합니다.
 
 
+- put은 삽입, remove는 삭제
+
+``` kotlin
+
+    val capitalCityMap: MutableMap<String, String> = mutableMapOf()
+
+    capitalCityMap.put("UK", "London")
+    capitalCityMap.put("JP", "Tokyo")
+    capitalCityMap.put("CH", "Beijing")
+    println(capitalCityMap)
+    // {UK=London, JP=Tokyo, CH=Beijing}
 
 
+    capitalCityMap.remove("CH")
+    println(capitalCityMap)
+    // {UK=London, JP=Tokyo}
 
+```
+
+<br>
+
+- **putAll()**을 사용하면 Map객체를 통합할 수 있다
+
+``` kotlin
+
+    val appData = mutableMapOf("USA" to "Washington")
+    capitalCityMap.putAll(appData)
+    
+    println(capitalCityMap)
+    // {UK=London, JP=Tokyo, USA=Washington}
+
+
+```
+
+<br>
+
+
+---
+### Map의 기타 자료구조
+
+- Map은 hashMapOf(), sortedMapOf(), linkedMapOf()로 각각 초기화 할 수 있다.
+- SortedMap은 기본적으로 키에 대해 오름차순 정렬된 형태로 사용된다.
+- 나머지는 Set과 똑같음
+
+``` kotlin
+
+    val hashMap = hashMapOf(1 to "Hello", 2 to "World")
+    println("hashMap : ${hashMap}")
+    // hashMap : {1=Hello, 2=World}
+    
+
+    val sortedMap = sortedMapOf(1 to "Apple", 2 to "Banana", 0 to "PineApple")
+    println("sortedMap : ${sortedMap}")
+    // sortedMap : {0=PineApple, 1=Apple, 2=Banana}
+    
+
+    val linkedHash = linkedMapOf(1 to "Computer", 2 to "Mouse")
+    println("linkedHash : ${linkedHash}")
+    // linkedHash : {1=Computer, 2=Mouse}
+    
+
+```
 
 
 
