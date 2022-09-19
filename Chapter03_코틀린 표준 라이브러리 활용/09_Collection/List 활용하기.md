@@ -71,6 +71,34 @@ println(list2.javaClass)
 
 <br>
 
+**index를 통해서 list를 접근하기 위해서는 .indices멤버를 추가하면 됩니다.**
+
+``` kotlin
+
+    // 인덱스를 통한 접근
+    for(index in list.indices) {
+        println("list[$index] = ${list[index]}")
+    }
+
+//    list[0] = 1
+//    list[1] = 2
+//    list[2] = 3
+//    list[3] = 4
+//    list[4] = 5
+//    list[5] = 6
+//    list[6] = 7
+
+```
+
+<br>
+
+### 비어있는 List생성
+
+
+emptyList<>()를 사용할 수 있다. 이때는 반드시 형식 매개변수를 지정한다.
+
+
+
 
 
 
