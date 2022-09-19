@@ -11,8 +11,7 @@ List는 순서에 따라 정렬된 요소를 가지는 컬렉션으로 가장 �
 
 <br>
 
-## 불변형 List 사용해보기.
-
+# 불변형 List 사용해보기.
 
 
 ``` kotlin
@@ -29,5 +28,59 @@ List는 순서에 따라 정렬된 요소를 가지는 컬렉션으로 가장 �
     println(list)
     // [1, 2, 3]
 
+```
+
+<br>
+
+**불변형 이지만 mixedTypes 형식 매개변수가 &#60;Any&#62;를 가진다.**
+![image](https://user-images.githubusercontent.com/74912130/191020916-e03b022a-d2c1-4b05-a832-8039ca1a3927.png)
+
+
+``` kotlin
+var list2 = listOf("Hello", 1, 2.445, 's')
+// [Hello, 1, 2.445, s]
+
+println(list2.javaClass)
+// class java.util.Arrays$ArrayList
 
 ```
+
+
+<br>
+
+### List 순환
+
+
+``` kotlin
+
+    list = mutableListOf(1, 2, 3, 4, 5, 6, 7)
+    for(item in list) {
+        println(item)
+    }
+
+//    1
+//    2
+//    3
+//    4
+//    5
+//    6
+//    7
+
+
+```
+
+<br>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
