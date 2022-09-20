@@ -29,8 +29,8 @@
     </thead>
     <tbody>
         <tr>
-            <td>최강 최창영</td>
-            <td>그외</td>
+            <td>최강 최창영 폐하</td>
+            <td>그 외 </td>
         </tr>
     </tbody>
 </table>
