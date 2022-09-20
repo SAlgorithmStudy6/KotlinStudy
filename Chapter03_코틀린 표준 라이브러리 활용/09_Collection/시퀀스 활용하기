@@ -1,0 +1,139 @@
+
+<br>
+
+# <span style="color:rgb(45, 120, 200)"> 시퀀스 활용하기 </span>
+
+---
+
+- 시퀀스는 순차적인 컬렉션으로 요소의 크기를 특정하지 않고, 나중에 결정할 수 있는 특수한 컬렉션이다.
+  	
+  - Ex) _특정 파일에서 줄 단위로 읽어서 요소를 만들 때 해당 파일의 끝을 모르면 줄이 언제 끝나는지 알 수 없는 경우가 있는데 이럴 때 사용할 수 있다._
+
+
+- 시퀀스는 계산하고 있지 않다가 toList()나 count() 같은 최종연산에 의해 결정됨
+  
+<br> 
+  
+
+
+
+ 
+#
+   
+  
+## <span style="color:rgb(45, 120, 150)"> 요소값 생성하기 </span>
+  
+generateSequence()로 생성
+ - 특정 값을 생성하기 위해 generateSequence()를 사용할 수 있다.
+ - seed 인수에 의해 시작 요소의 값이 결정된다.
+
+#
+
+ 
+``` kotlin
+  
+  	 // 시드 값 1을 시작으로 1씩 증가하는 시퀀스 정의
+     val nums: Sequence<Int> = generateSequence(1) {
+        it + 1
+    }
+
+    println(nums.take(10).toList())
+    // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  
+````
+  
+take(10)을 통해서 10개 만큼 요소가 저장되고, toList()를 통해서 List컬렉션으로 반환된다.
+  
+
+# 
+  
+``` kotlin
+  
+    val squares = generateSequence(1) {
+        it + 1
+    }.map { it * it }
+
+    println(squares.take(10).toList())
+    // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+  
+ ``` 
+
+#
+
+
+
+##  <span style="color:rgb(45, 120, 150)"> 요소 값 가져오기 </span> 
+
+**메소드 체이닝의 중간 결과 생성**
+
+- 중간 연산 결과 없이 한번에 끝까지 연산 후 결과를 반환하려면 asSequence()를 사용할 수 있습니다
+- 특히 filter나 map을 메소드 체이닝해서 사용할 경우 순차적 연산이기 때문에 시간이 많이 걸릴 수 있지만, asSequence()를 사용하면 병렬 처리되기 때문에 처리 성능이 좋아진다.
+
+
+**시퀀스를 사용하지 않은 메소드 체이닝**
+
+``` kotlin
+
+    val list6 = listOf(1, 2, 3, 4)
+    val listDefault = list6.map {
+        println("map : ${it}"); it * it
+    }
+        .filter {
+            println("filter : ${it}"); it % 2 == 0
+        }
+
+    println("listDefault : ${listDefault}")
+//    map : 1
+//    map : 2
+//    map : 3
+//    map : 4
+//    filter : 1
+//    filter : 4
+//    filter : 9
+//    filter : 16
+//    listDefault : [4, 16]
+
+```
+
+#
+
+**asSequence()를 통해 가져오기**
+
+``` kotlin
+
+    val listSeq = list6.asSequence()
+        .map {
+            println("map : ${it}"); it * it
+        }
+        .filter {
+            println("filter : ${it}"); it % 2 == 0
+        }.toList()
+
+    println("listSeq : ${listSeq}")
+//    map : 1
+//    filter : 1
+//    map : 2
+//    filter : 4
+//    map : 3
+//    filter : 9
+//    map : 4
+//    filter : 16
+//    listSeq : [4, 16]
+
+```
+
+- asSequence()를 사용한 다음 바로 map,filter를 이용하여 메소드 체이닝을 했다.
+  
+- .filter와 .map으로는 결과를 만들어 낼 수 없고, 마지막 toList()를 통해서 결과를 List를 반환할 때 모든 연산이 수행되고 결과물이 새로운 리스트인 listSeq에 지정된다.
+
+- 아까와 다르게 병렬처리 이기때문에 결과가 동시에 수행되면서 나옴
+	
+    - 따라서, 시퀀스를 사용하는 것이 메모리나 속도 측면에서 훨씬 더 좋은 성능을 낼 수 있다.
+    
+    
+![](https://velog.velcdn.com/images/lifeisbeautiful/post/0a521e74-3786-4d43-92de-b554673befb2/image.png)
+
+- 시퀀스를 사용하지 않은 것과 시퀀스를 사용한 결과의 시간차이.
+- 작은 컬렉션에는 시퀀스를 사용하지 않는 것이 좋다.
+	
+    - filter()등은 인라인 함수로 설계되어 있는데, 시퀀스를 사용하면 람다식을 저장하는 객체로 표현되기 때문에 인라인되지 않아 작은 컬렉션에서는 오히려 좋지 않다.
