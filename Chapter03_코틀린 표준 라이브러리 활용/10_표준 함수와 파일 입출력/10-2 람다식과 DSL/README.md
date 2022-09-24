@@ -61,7 +61,7 @@
     
 - DSL을 구현하는 요소
     
-    ![Untitled](10-2%20%E1%84%85%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%84%89%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%20DSL%2001497a13bf0740bd85d5f57f63f2d6a6/Untitled.png)
+    ![DSL_Element.png](./asset/DSL_Element.png)
     
 
 ### DSL을 사용한 사례
