@@ -25,7 +25,7 @@ fun main() {
 - Kotlin의 입출력 API
     - [kotlin.io](http://kotlin.io) 패키지는 자바 라이브러리를 확장한 것.
         
-        ![Untitled](10-3%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A7%E1%86%A8%20e82ce39b5ac24379978c2c9b75c9d261/Untitled.png)
+        ![in_output_package.png](./asset/in_output_package.png)
         
         - 간단한 데이터: readBytes, readLines, readText
         - 대량의 데이터: copyTo, forEachBlock, forEachLine
@@ -35,13 +35,13 @@ fun main() {
     - 비동기 관련 루틴은 코루틴에서 지원하고 있다. (11장)
     - io, nio의 기본적인 차이점은 버퍼 사용 여부
         
-        ![Untitled](10-3%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A7%E1%86%A8%20e82ce39b5ac24379978c2c9b75c9d261/Untitled%201.png)
+        ![io_nio_diff.png](./asset/io_nio_diff.png)
         
 - 스트림과 채널
     - 입력 스트림과 출력 스트림으로 구분
     - 채널 방식은 양방향으로 입출력이 가능
         
-        ![Untitled](10-3%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A7%E1%86%A8%20e82ce39b5ac24379978c2c9b75c9d261/Untitled%202.png)
+        ![nio_package.png](./asset/nio_package.png)
         
 - 넌버퍼와 버퍼 방식
     - 스트림에선 1바이트 씩 읽기 때문에 버퍼를 사용해서 다수의 데이터를 읽는 것보다 느림.
@@ -49,7 +49,7 @@ fun main() {
     - nio에서는 기본적으로 버퍼를 사용하기 때문에 데이터를 일일이 읽는 것보다 더 낫다.
 - 블로킹과 넌블로킹
     
-    ![Untitled](10-3%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A7%E1%86%A8%20e82ce39b5ac24379978c2c9b75c9d261/Untitled%203.png)
+    ![blocking.png](./asset/blocking.png)
     
     - 쓸 공간이 없을 때, 읽을 내용이 없을 때 대기하고 있는 상대를 블로킹이라고 한다.
     - 메인 코드의 흐름을 방해하지 않도록 입출력 작업 시 스레드나 비동기 루틴에 맡겨
@@ -117,7 +117,7 @@ fun main() {
     file.appendText("\nDo great work!") // 파일에 문자열 추가
     ```
     
-    ![스크린샷 2022-09-23 오후 7.23.45.png](10-3%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A7%E1%86%A8%20e82ce39b5ac24379978c2c9b75c9d261/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-09-23_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_7.23.45.png)
+    ![writeText.png](./asset/writeText.png)
     
     - writeText()의 상위 클래스로 올라가보면 FileOutputStream에서 표준 함수 use()를 이용해 write()가 사용된다.
     - printWrite()는 null을 파일에 쓸 수 있지만, bufferedWriter()는 NPE가 발생할 수 있다.
