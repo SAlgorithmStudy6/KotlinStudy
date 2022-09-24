@@ -1,0 +1,70 @@
+# 10-2 람다식과 DSL
+
+## Domain-Specific Language
+
+- 특정 애플리케이션의 도메인을 위해 특화된 언어
+- ex) 데이터베이스만을 다루는 SQL
+
+### 코틀린에서 DSL 사용하기
+
+- DSL 경험해 보기
+    
+    ```kotlin
+    // 먼저 데이터 모델 생성
+    data class Person(
+            var name: String? = null,
+            var age: Int? = null,
+            var job: Job? = null)
+    
+    data class Job(
+            var category: String? = null,
+            var position: String? = null,
+            var extension: Int? = null)
+    
+    // Version 1 - also
+    //fun person(block: (Person) -> Unit): Person {
+    //    val p = Person()
+    //    block(p)
+    //    return p
+    //}
+    
+    // Version 2 - apply
+    //fun person(block: Person.() -> Unit): Person {
+    //    val p = Person()
+    //    p의 block을 객체에 넣어준다.
+    //    p.block()
+    //    return p
+    //}
+    
+    // Version 3
+    fun person(block: Person.() -> Unit): Person = Person().apply(block)
+    
+    // block을 job에 넣어준다
+    fun Person.job(block: Job.() -> Unit) {
+        job = Job().apply(block)
+    }
+    
+    fun main() {
+        val person = person {
+            name = "Kildong"
+            age = 40
+            job {
+                category = "IT"
+                position = "Android Developer"
+                extension = 1234
+            }
+        }
+    
+        println(person)
+    }
+    ```
+    
+- DSL을 구현하는 요소
+    
+    ![Untitled](10-2%20%E1%84%85%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%84%89%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%20DSL%2001497a13bf0740bd85d5f57f63f2d6a6/Untitled.png)
+    
+
+### DSL을 사용한 사례
+
+- Spring 프레임워크
+- Ktor 프레임워크
