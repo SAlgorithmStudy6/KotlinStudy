@@ -76,7 +76,7 @@
     
     class Calc {
         fun addNum(a: Int, b: Int, add: (Int, Int) -> Unit) {
-            add(a,b)    // 람다식 add에는 변환값이 없다
+            add(a,b)    // 람다식 add에는 반환값이 없다
         }
     }
     ```
