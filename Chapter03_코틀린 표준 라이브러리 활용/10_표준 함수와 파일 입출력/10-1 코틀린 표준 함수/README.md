@@ -417,7 +417,7 @@ run() 과 비슷하지만 receiver의 유무가 다르다.
 - T는 Closeable? 이므로 block은 닫힐 수 있는 객체를 지정해야한다.
 
 ```kotlin
-public inline fun <T: Closealbe?, R> T.use(block: (T) -> R): R
+public inline fun <T: Closeable?, R> T.use(block: (T) -> R): R
 ```
 
 ```kotlin
